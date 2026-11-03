@@ -1,0 +1,59 @@
+{
+  "generation": "Fresh release API execution from bundled unchanged XYZ/SDF/CIF; manuscript-v1; RDKit 2025.09.3; spglib detection symprec 0.05 Angstrom. Automatic prefixes, not supplied reference prefixes. Independently constrained by tests/test_paper_examples.py.",
+  "examples": {
+    "cp_star": {
+      "method_profile": "manuscript-v1",
+      "serialization_profile": "canonical-sorted-v1",
+      "SMILES_1": "C[C]1C(C)=C(C)C(C)=C1C.[CH2][CH]CC.[C][O].[C][O]",
+      "SMILES_2": "C[C]1C(C)=C(C)C(C)=C1C.[CH2][CH]CC.[C][O].[C][O].[Fe&C&C%CC%CCCCC]",
+      "SMILES_3": "C[C]1C(C)=C(C)C(C)=C1C.[CH2][CH]CC.[C][O].[C][O].[{Octahedral}Fe&C&C%CC%CCCCC]",
+      "Suffix 2": "[Fe&C&C%CC%CCCCC]",
+      "Suffix 3": "[{Octahedral}Fe&C&C%CC%CCCCC]",
+      "Real Coordination Number": 6,
+      "Geometry Type": "Octahedral",
+      "prefix_source": "sdf_rdkit",
+      "variants": {
+        "noDonor": "C[C]1C(C)=C(C)C(C)=C1C.[CH2][CH]CC.[C][O].[C][O].[{Octahedral}Fe&X&X%X%X]",
+        "noPi": "C[C]1C(C)=C(C)C(C)=C1C.[CH2][CH]CC.[C][O].[C][O].[{Octahedral}Fe&C&C&CC&CCCCC]",
+        "noGeo": "C[C]1C(C)=C(C)C(C)=C1C.[CH2][CH]CC.[C][O].[C][O].[Fe&C&C%CC%CCCCC]"
+      }
+    },
+    "fecl4": {
+      "method_profile": "manuscript-v1",
+      "serialization_profile": "canonical-sorted-v1",
+      "SMILES_1": "[Cl].[Cl].[Cl].[Cl]",
+      "SMILES_2": "[Cl].[Cl].[Cl].[Cl].[Fe&Cl&Cl&Cl&Cl]",
+      "SMILES_3": "[Cl].[Cl].[Cl].[Cl].[{Tetrahedral}Fe&Cl&Cl&Cl&Cl]",
+      "Suffix 2": "[Fe&Cl&Cl&Cl&Cl]",
+      "Suffix 3": "[{Tetrahedral}Fe&Cl&Cl&Cl&Cl]",
+      "Real Coordination Number": 4,
+      "Geometry Type": "Tetrahedral",
+      "prefix_source": "sdf_rdkit",
+      "variants": {
+        "noDonor": "[Cl].[Cl].[Cl].[Cl].[{Tetrahedral}Fe&X&X&X&X]",
+        "noPi": "[Cl].[Cl].[Cl].[Cl].[{Tetrahedral}Fe&Cl&Cl&Cl&Cl]",
+        "noGeo": "[Cl].[Cl].[Cl].[Cl].[Fe&Cl&Cl&Cl&Cl]"
+      }
+    },
+    "mil88b": {
+      "method_profile": "manuscript-v1",
+      "serialization_profile": "canonical-sorted-v1",
+      "SMILES_1": "O=C([O-])c1ccc(C(=O)[O-])cc1",
+      "SMILES_2": "O=C([O-])c1ccc(C(=O)[O-])cc1.{cluster:Fe3;u3-O}x2.[Fe&O&O&O&O&O&O:u3]x3.{periodic:3D;sg=P6_3/mmc;pg=6/mmm;topo=acs}",
+      "SMILES_3": "O=C([O-])c1ccc(C(=O)[O-])cc1.{cluster:Fe3;u3-O}x2.[{Octahedral}Fe&O&O&O&O&O&O:u3]x3.{periodic:3D;sg=P6_3/mmc;pg=6/mmm;topo=acs}",
+      "Global Suffix 2": "{cluster:Fe3;u3-O}x2.[Fe&O&O&O&O&O&O:u3]x3.{periodic:3D;sg=P6_3/mmc;pg=6/mmm;topo=acs}",
+      "Global Suffix 3": "{cluster:Fe3;u3-O}x2.[{Octahedral}Fe&O&O&O&O&O&O:u3]x3.{periodic:3D;sg=P6_3/mmc;pg=6/mmm;topo=acs}",
+      "prefix_source": "cif_largest_fragment_rdkit",
+      "prefix_scope": "largest_finite_linker_not_full_composition",
+      "n_metal_centers": 6,
+      "periodicity": 3,
+      "space_group": "P6_3/mmc",
+      "point_group": "6/mmm",
+      "variants": {
+        "noDonor": "O=C([O-])c1ccc(C(=O)[O-])cc1.{cluster:Fe3;u3-O}x2.[{Octahedral}Fe&X&X&X&X&X&X:u3]x3.{periodic:3D;sg=P6_3/mmc;pg=6/mmm;topo=acs}",
+        "noPi": "O=C([O-])c1ccc(C(=O)[O-])cc1.{cluster:Fe3;u3-O}x2.[{Octahedral}Fe&O&O&O&O&O&O:u3]x3.{periodic:3D;sg=P6_3/mmc;pg=6/mmm;topo=acs}",
+        "noGeo": "O=C([O-])c1ccc(C(=O)[O-])cc1.{cluster:Fe3;u3-O}x2.[Fe&O&O&O&O&O&O:u3]x3.{periodic:3D;sg=P6_3/mmc;pg=6/mmm;topo=acs}"
+      }
+    }
+  }
+}

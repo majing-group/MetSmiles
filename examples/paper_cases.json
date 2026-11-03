@@ -1,0 +1,46 @@
+{
+  "mapping_evidence": {
+    "cp_star": "Figure 2a Cp* encoding schematic and SI MetSMILES construction example (S28): the full ligand prefix C[C]1C(=C(C(=C1C)C)C)C.[C]=O.[C]=O.[CH2][CH]CC listed in the SI matches dataset train_iron_ref ID48, fragment-wise. The exact dataset input pair is bundled as figure2/48.xyz and figure2/48.sdf, with SHA256 identities below. The drawing itself is schematic, not an atom-index map.",
+    "fecl4": "Figure 2b depicts the tetrahedral Fe/four-Cl coordination motif. Dataset test_exp ID405 supplies a real structure realizing that motif: SMILES_1 [Cl].[Cl].[Cl].[Cl], suffix [{Tetrahedral}Fe&Cl&Cl&Cl&Cl]. Bundled data/405.xyz and data/405.sdf were byte-matched to this dataset ID; SHA256 identities are below. This establishes the dataset-file identity and four-Cl motif correspondence, not atom-by-atom identity between the figure drawing and these coordinates.",
+    "mil88b": "The main-text periodic-system discussion and Figure 2b caption identify MIL-88B(Fe); the illustrated extension specifies two Fe3O nodes, P6_3/mmc, point group 6/mmm and acs topology. Bundled data/mil-88b.cif is the study MIL-88B example, identified by its SHA256 below. The script computes local sites, cluster counts and periodic rank from that file, detects symmetry with spglib and explicitly supplies acs. No independent CSD deposition identifier or atom-index match to the drawing is asserted."
+  },
+  "input_sha256": {
+    "figure2/48.xyz": "0208e723448f3a5829268f1268956831a6b028ab1f7e1dc50a95b46fcb0890d9",
+    "figure2/48.sdf": "cce8853873d7f0c6493c9e874c3fa909a87c3f1baf10b7bb862d6ecc00b18394",
+    "data/405.xyz": "cd7baaa1d1be8b1f9253c8d25f0d7df06cedd29704dc1c5044769387badf9ae3",
+    "data/405.sdf": "3e751f60a7b3cf95af1649838fd347909ad06d7c4a2fa888d899100220eca88c",
+    "data/mil-88b.cif": "50d1c259fd373630136c61d2fdb81715dd95637c05ebd8e550fdf80ddc413034"
+  },
+  "cases": [
+    {
+      "id": "cp_star",
+      "paper_mapping": "Figure 2a Cp* encoding schematic; train_iron_ref/48",
+      "xyz": "figure2/48.xyz",
+      "sdf": "figure2/48.sdf",
+      "expected_canonical_suffix": "[{Octahedral}Fe&C&C%CC%CCCCC]",
+      "expected_effective_cn": 6,
+      "counting": "two CO carbon contacts + one olefin centroid + three Cp sites = 6; raw contacting atoms = 9",
+      "reference_prefix_source": "figure2/reference.json supplied_base_smiles, from dataset train_iron_ref ID48; not used by automatic runner"
+    },
+    {
+      "id": "fecl4",
+      "paper_mapping": "Figure 2b tetrahedral four-Cl motif correspondence; real dataset structure test_exp/405, not an atom-by-atom figure-coordinate identification",
+      "xyz": "data/405.xyz",
+      "sdf": "data/405.sdf",
+      "expected_canonical_suffix": "[{Tetrahedral}Fe&Cl&Cl&Cl&Cl]",
+      "expected_effective_cn": 4,
+      "counting": "four separate Cl donors; six Cl-Fe-Cl angles near arccos(-1/3)",
+      "reference_prefix_source": "dataset test_exp ID405 SMILES_1 = [Cl].[Cl].[Cl].[Cl]; no anion charge inferred"
+    },
+    {
+      "id": "mil88b",
+      "paper_mapping": "Figure 2b MIL-88B(Fe) periodic-system example; manuscript P0028/P0030",
+      "cif": "data/mil-88b.cif",
+      "expected_canonical_suffix": "{cluster:Fe3;u3-O}x2.[{Octahedral}Fe&O&O&O&O&O&O:u3]x3.{periodic:3D;sg=P6_3/mmc;pg=6/mmm;topo=acs}",
+      "expected_effective_cn": [6, 6, 6, 6, 6, 6],
+      "counting": "two quotient-cell Fe3 groups, three Fe per group = six total, each O6 with one mu3-O",
+      "topology": "acs supplied explicitly; not automatic inference",
+      "prefix_scope": "largest finite linker, not full framework composition"
+    }
+  ]
+}

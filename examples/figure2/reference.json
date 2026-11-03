@@ -1,0 +1,13 @@
+{
+  "dataset": "train_iron_ref",
+  "id": "48",
+  "supplied_base_smiles": "C[C]1C(=C(C(=C1C)C)C)C.[C]=O.[C]=O.[CH2][CH]CC",
+  "manuscript_diagram_suffix": "[{Octahedral}Fe&C&C%CCCCC%CC]",
+  "expected_canonical_suffix": "[{Octahedral}Fe&C&C%CC%CCCCC]",
+  "provenance": "Paired XYZ/SDF from dataset train_iron_ref ID48, byte-identical SHA256 checked. Figure 2a Cp* schematic identified by an exact fragment-wise match of the full SI ligand prefix; not a guessed ID or atom-index map from the drawing. Coordinates copied unchanged.",
+  "prefix_boundary": "The supplied reference base uses [C]=O while the automatic SDF prefix retains the SDF single C-O bonds as [C][O]; a bond-order representation difference. The diagram and canonical coordination suffixes also differ in pi-entry order.",
+  "input_sha256": {
+    "48.sdf": "cce8853873d7f0c6493c9e874c3fa909a87c3f1baf10b7bb862d6ecc00b18394",
+    "48.xyz": "0208e723448f3a5829268f1268956831a6b028ab1f7e1dc50a95b46fcb0890d9"
+  }
+}

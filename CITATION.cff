@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use MetSMILES, please cite this repository and the accompanying manuscript."
+title: "MetSMILES: coordination-environment-aware SMILES annotation for metal complexes"
+version: "0.3.0"
+date-released: "2026-11-03"
+license: "MIT"
+repository-code: "https://github.com/majing-group/MetSmiles"
+authors:
+  - family-names: "Chen"
+    given-names: "Jiawei"

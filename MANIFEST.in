@@ -1,0 +1,5 @@
+include README.zh-CN.md METHODS.md CHANGELOG.md CITATION.cff
+include requirements.txt .gitignore
+recursive-include examples *.py *.md *.xyz *.sdf *.cif *.json
+recursive-include tests *.py
+recursive-include .github *.yml
